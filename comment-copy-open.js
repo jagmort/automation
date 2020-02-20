@@ -38,7 +38,7 @@ setTimeout(function() {
         var text = document.querySelector('.text');
         text.select();
         document.execCommand('copy');
-        window.open("http://omssis-sms.mts-nn.ru/sms2/backend/web/index.php");
+        window.open("http://omssis-sms.mts-nn.ru/sms2/");
     });
     document.getElementById('copyw').click();
 
