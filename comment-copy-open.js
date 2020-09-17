@@ -30,7 +30,7 @@ setTimeout(function() {
     var fl = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(10).attr('aria-label');
     var ul = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(9).attr('aria-label');
     var plat = $('#group_interaction_info_form-tab_view-customer_comment_out').text();
-    var mess = "Недоступно оборудование " + adres +', '+ tre[1] + ". Время начала аварии " + timedown+ " " + namberGP + " " + plat;
+    var mess = "Недоступно оборудование " + adres + ', ' + tre[1] + ". Время начала аварии " + timedown + " " + namberGP + " " + plat;
     $( "div[class='ui-grid-col-12']" ).html('<button class="copy" id="copyw">Перейти в СМС</button><input class="text" id="gert" value="аааа"  />');
     document.getElementById('gert').value = mess;
 
