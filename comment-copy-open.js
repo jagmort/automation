@@ -39,7 +39,7 @@ setTimeout(function() {
         var text = document.querySelector('.text');
         text.select();
         document.execCommand('copy');
-        if(typeof openSMS === 'undefined') window.open("http://omssis-sms.mts-nn.ru/sms2/");
+        if(typeof openSMS === 'undefined' || openSMS === true) window.open("http://omssis-sms.mts-nn.ru/sms2/");
     });
     document.getElementById('copyw').click();
 
