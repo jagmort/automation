@@ -26,7 +26,7 @@ setTimeout(function() {
                 txt = obj + ' устройство';
             }
             else {
-                if((obj % 10) < 5) {
+                if((obj % 10) < 5 && (obj % 10) > 0) {
                     txt = obj + ' устройства';
                 }
                 else {
