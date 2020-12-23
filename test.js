@@ -35,7 +35,6 @@ setTimeout(function() {
             }
         }
     }
-
     var dat = $(".ui-datatable-selectable").find("td").eq(0).html().split(';');
     var host = dat[1];
     var per = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(10).attr('aria-label');
