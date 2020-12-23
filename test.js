@@ -37,8 +37,8 @@ setTimeout(function() {
     }
     var dat = $(".ui-datatable-selectable").find("td").eq(0).html().split(';');
     var host = dat[1];
-    var per = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(10).attr('aria-label');
-    var ent = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(9).attr('aria-label');
+    var per = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(12).attr('aria-label');
+    var ent = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(11).attr('aria-label');
 
     var msg = "Недоступно " + txt + " (" + ent + " юл, " + per + " фл" + ") "+ addr + '; ' + host + " Время начала аварии: " + down + " Планируемое время восст: " + plan + " " + num;
     $( "div[class='ui-grid-col-12']" ).html('<button class="copy" id="copyw">Перейти в СМС</button><input class="text" id="gert" value="аааа"  />');
