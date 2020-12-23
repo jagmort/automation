@@ -4,35 +4,42 @@ if(comment.length > 0) {
 }
 
 setTimeout(function() {
-    var result = $("table tr:eq(1) td:eq(0)").text();
-    var arr = result.split(';');
-    var y = '';
+    var addr = $('#group_interaction_info_form-tab_view-node_rule_building_out-address_ac_out').text();
+    var down = $('#group_interaction_info_form-tab_view-calculate_due_date_form_out').text();
+    var plan = $('group_interaction_info_form-tab_view-estimated_end_date_out').text();
+    var num = $( "span[class='heading-accent']" ).text();
 
-    arr.forEach(function(element) {
-        if(element.match(/\[(\d+\.){3}\d+\]/)) y = element;
-    });
-
-    var adres = $('#group_interaction_info_form-tab_view-node_rule_building_out-address_ac_out').text();
-    var timedown = $('#group_interaction_info_form-tab_view-calculate_due_date_form_out').text();
-    var namberGP = $( "span[class='heading-accent']" ).text();
-
-    var vse = new Array();
-    var len = $(".ui-datatable-selectable").length;
-    for(i=0; i<len; i++){
-        var e = $(".ui-datatable-selectable").eq(i).find("td").eq(1).html();
-        vse.push(e);
+    var obj = $(".ui-datatable-selectable").find("td").length / 15;
+    if(obj < 2) {
+        txt = 'устройство';
     }
-    var sum = 0;
-    for(var i=0; i<vse.length; i++){
-        sum = sum + parseInt(vse[i]);
+    else {
+        if((obj % 100) > 4 && (obj % 100) < 21) {
+            txt = obj + ' устройств';
+        }
+        else {
+            if((obj % 10) < 2) {
+                txt = obj + ' устройство';
+            }
+            else {
+                if((obj % 10) < 5) {
+                    txt = obj + ' устройства';
+                }
+                else {
+                    txt = obj + ' устройств';
+                }
+            }
+        }
     }
-    var tre = $(".ui-datatable-selectable").find("td").eq(0).html().split(';');
-    var fl = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(10).attr('aria-label');
-    var ul = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(9).attr('aria-label');
-    var plat = $('#group_interaction_info_form-tab_view-customer_comment_out').text();
-    var mess = "Недоступно оборудование " + adres + ', ' + tre[1] + ". Время начала аварии " + timedown + " " + namberGP + " " + plat;
+
+    var dat = $(".ui-datatable-selectable").find("td").eq(0).html().split(';');
+    var host = dat[1];
+    var per = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(10).attr('aria-label');
+    var ent = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(9).attr('aria-label');
+
+    var msg = "Недоступно " + txt + " (" + ent + " юл, " + per + " фл" + ") "+ addr + '; ' + obj + ". Время начала аварии: " + down + "; Планируемое время восст: " + plan + "; " + num;
     $( "div[class='ui-grid-col-12']" ).html('<button class="copy" id="copyw">Перейти в СМС</button><input class="text" id="gert" value="аааа"  />');
-    document.getElementById('gert').value = mess;
+    document.getElementById('gert').value = msg;
 
     var button = document.querySelector('.copy');
     button.addEventListener('click', function(event) {
