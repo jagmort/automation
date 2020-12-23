@@ -6,10 +6,14 @@ if(comment.length > 0) {
 setTimeout(function() {
     var addr = $('#group_interaction_info_form-tab_view-node_rule_building_out-address_ac_out').text();
     var down = $('#group_interaction_info_form-tab_view-calculate_due_date_form_out').text();
-    var plan = $('group_interaction_info_form-tab_view-estimated_end_date_out').text();
+    var plan = $('#group_interaction_info_form-tab_view-estimated_end_date_out').text();
     var num = $( "span[class='heading-accent']" ).text();
 
+    var pgs = $(".ui-paginator-pages").find("a").length;
     var obj = $(".ui-datatable-selectable").find("td").length / 15;
+    if(pgs > 1) {
+        obj = 5 * (pgs - 1) + obj;
+    }
     if(obj < 2) {
         txt = 'устройство';
     }
@@ -18,11 +22,11 @@ setTimeout(function() {
             txt = obj + ' устройств';
         }
         else {
-            if((obj % 10) < 2) {
+            if((obj % 10) < 2 && (obj % 10) > 0) {
                 txt = obj + ' устройство';
             }
             else {
-                if((obj % 10) < 5) {
+                if((obj % 10) < 5 && (obj % 10) > 0) {
                     txt = obj + ' устройства';
                 }
                 else {
@@ -34,10 +38,10 @@ setTimeout(function() {
 
     var dat = $(".ui-datatable-selectable").find("td").eq(0).html().split(';');
     var host = dat[1];
-    var per = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(10).attr('aria-label');
-    var ent = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(9).attr('aria-label');
+    var per = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(12).attr('aria-label');
+    var ent = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(11).attr('aria-label');
 
-    var msg = "Недоступно " + txt + " (" + ent + " юл, " + per + " фл" + ") "+ addr + '; ' + obj + ". Время начала аварии: " + down + "; Планируемое время восст: " + plan + "; " + num;
+    var msg = "Недоступно " + txt + " (" + ent + " юл, " + per + " фл" + ") "+ addr + '; ' + host + " Время начала аварии: " + down + " Планируемое время восст: " + plan + " " + num;
     $( "div[class='ui-grid-col-12']" ).html('<button class="copy" id="copyw">Перейти в СМС</button><input class="text" id="gert" value="аааа"  />');
     document.getElementById('gert').value = msg;
 
