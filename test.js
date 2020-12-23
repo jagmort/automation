@@ -41,7 +41,7 @@ setTimeout(function() {
     var per = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(12).attr('aria-label');
     var ent = $("#group_interaction_info_form-tab_view-group_interaction_rule_table_head").find("tr").eq(2).find("th").eq(11).attr('aria-label');
 
-    var msg = "Недоступно " + txt + " (" + ent + " юл, " + per + " фл" + ") "+ addr + '; ' + host + " Время начала аварии: " + down + " Планируемое время восст: " + plan + " " + num;
+    var msg = "Недоступно " + txt + " (" + ent + " юл, " + per + " фл" + ") "+ addr + '; ' + host + "\r\nВремя начала аварии: " + down + "\r\nПланируемое время восст: " + plan + "\r\n" + num;
     $( "div[class='ui-grid-col-12']" ).html('<button class="copy" id="copyw">Перейти в СМС</button><input class="text" id="gert" value="аааа"  />');
     document.getElementById('gert').value = msg;
 
