@@ -6,7 +6,7 @@ if(comment.length > 0) {
 setTimeout(function() {
     var addr = $('#group_interaction_info_form-tab_view-node_rule_building_out-address_ac_out').text();
     var down = $('#group_interaction_info_form-tab_view-calculate_due_date_form_out').text();
-    var plan = $('group_interaction_info_form-tab_view-estimated_end_date_out').text();
+    var plan = $('#group_interaction_info_form-tab_view-estimated_end_date_out').text();
     var num = $( "span[class='heading-accent']" ).text();
 
     var obj = $(".ui-datatable-selectable").find("td").length / 15;
