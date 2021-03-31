@@ -5,19 +5,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
-import json
-import datetime
-import time
 
-url_back = 'http://omssis-sms.mts-nn.ru/post/argus-auto.html'
 url_argus = 'http://argus-ktp.pr.rt.ru:8080/argus/'
 login = ''
 password = ''
+comment = ''
+reason = ''
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 
-comment = ''
-reason = ''
 text_file = open("list.txt", "r")
 arr = text_file.read().split("\n")
 driver.get(url_argus)
