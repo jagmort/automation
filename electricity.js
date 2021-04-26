@@ -39,7 +39,9 @@ $("#signal_form-j_idt973").click();
 var selector = "#gp_idle_dlg_form-idle_datetime_input";
 var i = 0;
 waitForEl(selector, function() {
-  $(selector).val(date);
+  setTimeout(function() {
+    $(selector).val(date);
+  }, 500);
   $("#gp_idle_dlg_form-workDelayBtn").click();
 });
 
