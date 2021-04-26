@@ -45,6 +45,7 @@ waitForEl(selector, function() {
   $("#gp_idle_dlg_form-workDelayBtn").click();
 });
 
+sleep(500);
 var selector = "#group_interaction_info_form-tab_view-wait_for_idle_out";
 var i = 0;
 waitForEl(selector, function() {
