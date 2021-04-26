@@ -1,4 +1,4 @@
-$("#gi_header-header_frame").html('<textarea id="sdsaa" name="asd" cols="100" rows="3" autocomplete="false" placeholder="Ваш комментарий" maxlength="100000" class="ui-inputfield ui-inputtextarea ui-widget ui-state-default ui-corner-all width-75-percents ui-inputtextarea-resizable ui-state-hover" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="true" data-autosize-on="true" style="overflow: hidden; overflow-wrap: break-word; height: 100px;"></textarea>')
+$("#gi_header-header_frame").html('<textarea id="sdsaa" name="asd" cols="100" rows="3" autocomplete="false" placeholder="Список ПРМОН из Инити" maxlength="100000" class="ui-inputfield ui-inputtextarea ui-widget ui-state-default ui-corner-all width-75-percents ui-inputtextarea-resizable ui-state-hover" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="true" data-autosize-on="true" style="overflow: hidden; overflow-wrap: break-word; height: 100px;"></textarea>')
 
 var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
@@ -25,14 +25,12 @@ setTimeout(function() {
 
   function osnova() {
     $("div.ui-widget-overlay").remove()
-        var all = $("#doldy").contents();
-    all.find("#group_def_tab-history_form-new_comment").val(comment);
-
     var all = $("#doldy").contents();
+    all.find("#group_def_tab-history_form-new_comment").val(comment);
     all.find("#group_def_tab-history_form-add_comment").click();
 
+    all.find("#gi_header-takeTask").click();
     all.find("#signal_form-j_idt973").click();
-
 
     function perenaz() {
       all.find("#gp_idle_dlg_form-idle_datetime_input").val(date);
@@ -40,7 +38,8 @@ setTimeout(function() {
     }
 
     var timerId = setInterval(function() {
-      if (all.find("div").is("#gp_idle_dlg")) {
+      
+      if(all.find("#gp_idle_dlg").is(':visible')) {
         perenaz();
         clearInterval(timerId);
         setTimeout(function() {
