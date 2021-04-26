@@ -33,8 +33,6 @@ var date = dd + '.' + mm + '.' + yyyy + ' ' + time;
 $("#group_def_tab-history_form-new_comment").val("Отключение э/э до " + time);
 $("#group_def_tab-history_form-add_comment").click();
 
-$("#gi_header-takeTask").click();
-
 $("#signal_form-j_idt973").click();
 var selector = "#gp_idle_dlg_form-idle_datetime_input";
 var i = 0;
