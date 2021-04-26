@@ -48,14 +48,9 @@ waitForEl(selector, function() {
 var selector = "#group_interaction_info_form-tab_view-wait_for_idle_out";
 var i = 0;
 waitForEl(selector, function() {
-  // idle out is visible
+  $("#gi_header-assignTask").click();
 });
 
-var selector = "#gi_header-assignTask";
-var i = 0;
-waitForEl(selector, function() {
-  $(selector).click();
-});
 $("#reassign_dialog_form-select_worksite_label").click();
 
 $(document).xpathEvaluate("//li[contains(text(), 'отключение э/э')]").click();
