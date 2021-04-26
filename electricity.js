@@ -43,17 +43,3 @@ waitForEl(selector, function() {
   $("#gp_idle_dlg_form-workDelayBtn").click();
 });
 
-var selector = "#group_interaction_info_form-tab_view-wait_for_idle_out";
-var i = 0;
-waitForEl(selector, function() {
-  $("#gi_header-assignTask").click();
-});
-
-$("#reassign_dialog_form-select_worksite_label").click();
-
-var selector = "#reassign_dialog";
-var i = 0;
-waitForEl(selector, function() {
-  $(document).xpathEvaluate("//li[contains(text(), 'отключение э/э')]").click();
-  $("#reassign_dialog_form-reassign").click();
-});
