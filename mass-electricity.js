@@ -29,7 +29,6 @@ setTimeout(function() {
     all.find("#group_def_tab-history_form-new_comment").val(comment);
     all.find("#group_def_tab-history_form-add_comment").click();
 
-    all.find("#gi_header-takeTask").click();
     all.find("button[id*='signal_form-j_idt']").click();
 
     function perenaz() {
