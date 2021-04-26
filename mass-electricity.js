@@ -29,7 +29,7 @@ setTimeout(function() {
     all.find("#group_def_tab-history_form-new_comment").val(comment);
     all.find("#group_def_tab-history_form-add_comment").click();
 
-    all.find("#signal_form-j_idt973").click();
+    all.find("button[id*='signal_form-j_idt']").click();
 
     function perenaz() {
       all.find("#gp_idle_dlg_form-idle_datetime_input").val(date);
